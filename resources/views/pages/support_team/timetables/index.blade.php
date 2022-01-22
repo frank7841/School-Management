@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('page_title', 'Manage TimeTables')
-@section('content')
+@section('content')  
 
     <div class="card">
         <div class="card-header header-elements-inline">
