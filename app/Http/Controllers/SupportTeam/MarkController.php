@@ -201,7 +201,7 @@ class MarkController extends Controller
                 $d['t1'] = $t1 = $mks['t1_'.$mk->id];
                 $d['t2'] = $t2 = $mks['t2_'.$mk->id];
                 $d['tca'] = $tca = $t1 + $t2;
-                $d['exm'] = $exm = $mks['exm_'.$mk->id];
+                $d['exm'] = $exm = $mks['exm_'.$mk->id]; 
 
 
             /** SubTotal Grade, Remark, Cum, CumAvg**/

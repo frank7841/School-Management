@@ -23,7 +23,7 @@
     <tr>
         <th rowspan="2">SUBJECTS</th>
         <th colspan="3">CONTINUOUS ASSESSMENT</th>
-        <th rowspan="2">EXAM<br>(60)</th>
+        <th rowspan="2">EXAM<br>(70)</th>
         <th rowspan="2">FINAL MARKS <br> (100%)</th>
         <th rowspan="2">GRADE</th>
         <th rowspan="2">SUBJECT <br> POSITION</th>
@@ -41,9 +41,9 @@
         <th rowspan="2">REMARKS</th>
     </tr>
     <tr>
-        <th>CA1(20)</th>
-        <th>CA2(20)</th>
-        <th>TOTAL(40)</th>
+        <th>CA1(30)</th>
+        <th>CA2(30)</th>
+        <th>TOTAL(30)</th>
     </tr>
     </thead>
     <tbody>
@@ -53,7 +53,7 @@
             @foreach($marks->where('subject_id', $sub->id)->where('exam_id', $ex->id) as $mk)
                 <td>{{ $mk->t1 ?: '-' }}</td>
                 <td>{{ $mk->t2 ?: '-' }}</td>
-                <td>{{ $mk->tca ?: '-' }}</td>
+                <td>{{ $mk->tca/2 ?: '-' }}</td>
                 <td>{{ $mk->exm ?: '-' }}</td>
 
                 <td>{{ $mk->$tex ?: '-'}}</td>
