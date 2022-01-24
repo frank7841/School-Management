@@ -28,6 +28,7 @@ class CreateExamRecordsTable extends Migration
             $table->string('p_comment')->nullable();
             $table->string('t_comment')->nullable();
             $table->string('year');
+            $table->unsignedInteger('grade_id')->nullable();
             $table->timestamps();
         });
     }

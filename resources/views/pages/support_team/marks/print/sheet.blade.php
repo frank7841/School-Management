@@ -5,7 +5,7 @@
         <td><strong>NAME:</strong> {{ strtoupper($sr->user->name) }}</td>
         <td><strong>ADM NO:</strong> {{ $sr->adm_no }}</td>
         <td><strong>HOUSE:</strong> {{ strtoupper($sr->house) }}</td>
-        <td><strong>CLASS:</strong> {{ strtoupper($my_class->name) }}</td>
+        <td><strong>CLASS:</strong> {{ strtoupper($my_class->name)}}  {{ strtoupper($sr->section->name) }}</td>
     </tr>
     <tr>
         <td><strong>REPORT SHEET FOR</strong> {!! strtoupper(Mk::getSuffix($ex->term)) !!} TERM </td>
@@ -75,8 +75,30 @@
         </tr>
     @endforeach
     <tr>
+        <?php $cumGrade = "A"?>
+            @if($exr->ave >=74 && $exr->ave <=80 ){
+            <?php $cumGrade = 'A-'?>;
+            }
+        @elseif($exr->ave >= 68 && $exr->ave <= 73 ){
+            <? php $cumGrade='B+' ?>
+        }
+        @endif
         <td colspan="3"><strong>TOTAL SCORES OBTAINED: </strong> {{ $exr->total }}</td>
-        <td colspan="3"><strong>FINAL AVERAGE: </strong> {{ $exr->ave }}</td>
+        <td colspan="3"><strong>FINAL AVERAGE: </strong> {{ $exr->ave }} <strong>OVERAL GRADE:</strong>
+            @if($exr->ave >=81)A
+            @elseif($exr->ave >= 74 && $exr->ave <= 80 )B+
+            @elseif($exr->ave >= 68 && $exr->ave <= 73 )B+
+            @elseif($exr->ave >= 63 && $exr->ave <= 67 )B
+            @elseif($exr->ave >= 60 && $exr->ave <= 62 )B-
+            @elseif($exr->ave >= 55 && $exr->ave <= 59 )C+
+            @elseif($exr->ave >= 50 && $exr->ave <= 54 )C
+            @elseif($exr->ave >= 45 && $exr->ave <= 49 )C-
+            @elseif($exr->ave >= 40 && $exr->ave <= 44 )D+
+            @elseif($exr->ave >= 35 && $exr->ave <= 39 )D
+            @elseif($exr->ave >= 30 && $exr->ave <= 34 )D-
+            @elseif($exr->ave <=29)E
+            
+            @endif  </td>
         <td colspan="3"><strong>CLASS AVERAGE: </strong> {{ $exr->class_ave }}</td>
     </tr>
     </tbody>
