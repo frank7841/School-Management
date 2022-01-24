@@ -22,7 +22,7 @@ class CreateExamsTable extends Migration
         });
 
         Schema::table('exams', function (Blueprint $table) {
-            $table->requied(['term', 'year']);
+            $table->required(['term', 'year']);
         });
     }
 
